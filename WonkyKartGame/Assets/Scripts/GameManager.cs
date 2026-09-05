@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,12 +10,17 @@ public class GameManager : MonoBehaviour
     {
 
     }
-    public void StartGame()
+    private async Task LoadScene()
     {
-        SceneManager.LoadScene(1, LoadSceneMode.Additive);
+        await SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
         camera.SetActive(false);
         Scene scene = SceneManager.GetSceneByBuildIndex(1);
-        GameObject cameras = GameObject.Find("Camera");
-        cameras.SetActive(true);
+        GameObject PlayerCamera = GameObject.Find("Main Camera");
+        PlayerCamera.SetActive(true);
+    }
+    public void StartGame()
+    {
+        #pragma warning disable
+        LoadScene();
     }
 }

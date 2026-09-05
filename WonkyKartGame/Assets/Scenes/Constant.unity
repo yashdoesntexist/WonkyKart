@@ -286,6 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50b989f8b71997a42ac28b3e88d62834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  camera: {fileID: 470817259}
 --- !u!114 &348466933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,7 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd5bb77def4e6cf45afd389689455b8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuManager
-  goal: {fileID: 0}
+  gameManager: {fileID: 348466932}
 --- !u!4 &348466934
 Transform:
   m_ObjectHideFlags: 0
@@ -327,7 +328,7 @@ GameObject:
   - component: {fileID: 470817261}
   - component: {fileID: 470817260}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: UICamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -543,7 +544,7 @@ GameObject:
   - component: {fileID: 1168164771}
   - component: {fileID: 1168164770}
   m_Layer: 5
-  m_Name: Start Game
+  m_Name: Tutorial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

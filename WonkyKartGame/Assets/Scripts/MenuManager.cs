@@ -1,12 +1,14 @@
+using Unity.VectorGraphics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    public GameObject goal;
+    [SerializeField]
+    private GameManager gameManager;
 
     public void Clicked()
     {
         gameObject.SetActive(false);
-        goal.SetActive(true);
     }
 }
