@@ -5,7 +5,8 @@ public class PlayerInputManager : MonoBehaviour
 {
     public InputActionAsset input;
     public int speed;
-    private bool isMovementDebugging = false;
+    public PlayerManager manager;
+    private bool isMovementDebugging;
     private InputAction move;
     private InputAction moveForward;
     private InputAction turn;
@@ -14,6 +15,7 @@ public class PlayerInputManager : MonoBehaviour
 
     private void OnEnable()
     {
+        isMovementDebugging = manager.isMovementDebugging;
         move = input.FindAction("Move");
         moveForward = input.FindAction("MoveForward");
         turn = input.FindAction("Turn");
@@ -22,7 +24,7 @@ public class PlayerInputManager : MonoBehaviour
 
     private void Update()
     {
-        if (moveForward.IsPressed())
+        if (moveForward.IsPressed() && !isMovementDebugging)
         {
             rb.linearVelocity = transform.rotation.eulerAngles * speed;
         }
