@@ -9,7 +9,7 @@ public class PlayerInputManager : MonoBehaviour
     public PlayerManager manager;
     private bool isMovementDebugging;
     private InputAction move;
-    private InputAction moveForward;
+    private InputAction moveDirectional;
     private InputAction turn;
 
     private Rigidbody rb;
@@ -18,7 +18,7 @@ public class PlayerInputManager : MonoBehaviour
     {
         isMovementDebugging = manager.isMovementDebugging;
         move = input.FindAction("Move");
-        moveForward = input.FindAction("MoveForward");
+        moveDirectional = input.FindAction("MoveForward");
         turn = input.FindAction("Turn");
         rb = GetComponent<Rigidbody>();
         rb.maxLinearVelocity = 5;
@@ -26,20 +26,21 @@ public class PlayerInputManager : MonoBehaviour
 
     private void Update()
     {
-        if (moveForward.IsPressed() && !isMovementDebugging)
+        if (moveDirectional.IsPressed() || move.IsPressed())
+        {
+
+        }
+        if (moveDirectional.IsPressed() && !isMovementDebugging)
         {
             Vector2 direction = move.ReadValue<Vector2>() * speed;
-            rb.AddRelativeForce(new Vector3(direction.x, rb.linearVelocity.y, direction.y));
+            rb.AddRelativeForce(new Vector3(direction.x, 0, direction.y));
         }
         if (move.IsPressed() && isMovementDebugging)
         {
             Vector2 direction = move.ReadValue<Vector2>() * speed;
             rb.linearVelocity = new Vector3(direction.x, rb.linearVelocity.y, direction.y);
-        } else
-        {
-            rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);
         }
-        if (turn.IsPressed() && moveForward.IsPressed())
+        if (turn.IsPressed() && moveDirectional.IsPressed())
         {
             float direction = turn.ReadValue<float>();
             gameObject.transform.Rotate(0, (direction * gameObject.transform.rotation.y) + (turnSpeed * direction), 0);

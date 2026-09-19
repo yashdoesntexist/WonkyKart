@@ -82,15 +82,37 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "efe3a967-7adc-4b98-9e7f-65e50b868216",
+                    "name": "1D Axis",
+                    "id": "24b0c0bd-0969-40e6-99fc-dbee2371fb05",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveForward",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "2418a714-5f3c-439b-9047-7b8b0911708d",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "MoveForward",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "3f56ae36-4a36-4567-9ed4-5bbfdcb208f9",
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "MoveForward",
                     "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 },
                 {
                     "name": "2D Vector",

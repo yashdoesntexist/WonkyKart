@@ -6,6 +6,8 @@ public class MenuManager : MonoBehaviour
 {
     [SerializeField]
     private GameManager gameManager;
+    [SerializeField]
+    private GameObject mainMenu;
 
     public void Clicked()
     {

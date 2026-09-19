@@ -9,10 +9,14 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject Camera;
+    [SerializeField]
+    private GameObject mainMenu;
     public GameObject collectedItems;
     private int ItemsInLevel;
-    [SerializeField]
     private GameObject player;
+    private void OnEnable()
+    {
+    }
     private void StartFade()
     {
         
@@ -24,7 +28,6 @@ public class GameManager : MonoBehaviour
     }
     private async Task LoadScene()
     {
-        
         await SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
         player.SetActive(true);
         Camera.SetActive(false);
@@ -36,5 +39,6 @@ public class GameManager : MonoBehaviour
     {
         #pragma warning disable
         LoadScene();
+        mainMenu.SetActive(false);
     }
 }
