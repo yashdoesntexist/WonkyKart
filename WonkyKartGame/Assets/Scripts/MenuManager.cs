@@ -1,16 +1,37 @@
-using Unity.VectorGraphics;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    public GameManager GameManager;
     [SerializeField]
-    private GameManager gameManager;
+    private GameObject Camera;
     [SerializeField]
     private GameObject mainMenu;
+    [SerializeField]
+    private test test;
 
     public void Clicked()
     {
-        gameObject.SetActive(false);
+        mainMenu.SetActive(false);
+        GameManager.StartGame();
     }
+
+//    private async Task LoadScene()
+//    {
+//        await SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
+//        GameObject player = GameManager.GetPlayer();
+//        player.SetActive(true);
+//        Camera.SetActive(false);
+//        Scene scene = SceneManager.GetSceneByBuildIndex(1);
+//        GameObject PlayerCamera = GameObject.Find("Main Camera");
+//        PlayerCamera.SetActive(true);
+//    }
+//    public void StartGame()
+//    {
+//#pragma warning disable
+//        LoadScene();
+//        mainMenu.SetActive(false);
+//    }
 }

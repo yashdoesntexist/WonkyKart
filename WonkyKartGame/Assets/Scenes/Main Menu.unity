@@ -476,7 +476,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 348466932}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: StartGame
         m_Mode: 1
@@ -536,29 +536,13 @@ GameObject:
   m_Component:
   - component: {fileID: 348466934}
   - component: {fileID: 348466933}
-  - component: {fileID: 348466932}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: MainMenuManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &348466932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 348466931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50b989f8b71997a42ac28b3e88d62834, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  Camera: {fileID: 470817259}
-  mainMenu: {fileID: 1404564346}
-  collectedItems: {fileID: 0}
 --- !u!114 &348466933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -571,8 +555,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd5bb77def4e6cf45afd389689455b8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuManager
-  gameManager: {fileID: 348466932}
+  GameManager: {fileID: 0}
+  Camera: {fileID: 0}
   mainMenu: {fileID: 1404564346}
+  test: {fileID: 0}
 --- !u!4 &348466934
 Transform:
   m_ObjectHideFlags: 0
@@ -1305,9 +1291,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 348466932}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: StartGame
+      - m_Target: {fileID: 348466933}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: Clicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1670,7 +1656,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 348466932}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
         m_MethodName: StartGame
         m_Mode: 1

@@ -7,12 +7,11 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject Camera;
-    [SerializeField]
-    private GameObject mainMenu;
     public GameObject collectedItems;
+    [SerializeField]
+    private GameObject PlayerCamera;
     private int ItemsInLevel;
+    [SerializeField]
     private GameObject player;
     private void OnEnable()
     {
@@ -20,6 +19,10 @@ public class GameManager : MonoBehaviour
     private void StartFade()
     {
         
+    }
+    public GameObject GetPlayer()
+    {
+        return player;
     }
     public void UpdateScore(int ItemsCollected)
     {
@@ -29,8 +32,8 @@ public class GameManager : MonoBehaviour
     private async Task LoadScene()
     {
         await SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
+        print(player);
         player.SetActive(true);
-        Camera.SetActive(false);
         Scene scene = SceneManager.GetSceneByBuildIndex(1);
         GameObject PlayerCamera = GameObject.Find("Main Camera");
         PlayerCamera.SetActive(true);
@@ -39,6 +42,5 @@ public class GameManager : MonoBehaviour
     {
         #pragma warning disable
         LoadScene();
-        mainMenu.SetActive(false);
     }
 }
