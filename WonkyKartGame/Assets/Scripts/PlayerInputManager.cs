@@ -4,9 +4,11 @@ using UnityEngine.InputSystem;
 public class PlayerInputManager : MonoBehaviour
 {
     public InputActionAsset input;
+    public PlayerManager manager;
+    [Header("Speed Settings")]
     public int speed;
     public int turnSpeed;
-    public PlayerManager manager;
+
     private bool isMovementDebugging;
     private InputAction move;
     private InputAction moveDirectional;

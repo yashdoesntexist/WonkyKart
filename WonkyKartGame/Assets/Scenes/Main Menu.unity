@@ -558,7 +558,6 @@ MonoBehaviour:
   GameManager: {fileID: 0}
   Camera: {fileID: 0}
   mainMenu: {fileID: 1404564346}
-  test: {fileID: 0}
 --- !u!4 &348466934
 Transform:
   m_ObjectHideFlags: 0

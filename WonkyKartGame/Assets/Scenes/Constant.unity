@@ -700,7 +700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   collectedItems: {fileID: 0}
-  PlayerCamera: {fileID: 0}
+  PlayerCamera: {fileID: 330585543}
   player: {fileID: 1054356697}
 --- !u!1 &1964895833
 GameObject:

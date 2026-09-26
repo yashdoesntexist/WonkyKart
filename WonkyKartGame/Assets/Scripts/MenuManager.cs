@@ -4,18 +4,16 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    public GameManager GameManager;
     [SerializeField]
     private GameObject Camera;
     [SerializeField]
     private GameObject mainMenu;
-    [SerializeField]
-    private test test;
 
     public void Clicked()
     {
         mainMenu.SetActive(false);
-        GameManager.StartGame();
+        Camera.SetActive(false);
+        GameManager.Instance.StartGame();
     }
 
 //    private async Task LoadScene()

@@ -13,12 +13,10 @@ public class GameManager : MonoBehaviour
     private int ItemsInLevel;
     [SerializeField]
     private GameObject player;
-    private void OnEnable()
+    public static GameManager Instance { get; private set; }
+    private void Awake()
     {
-    }
-    private void StartFade()
-    {
-        
+        if (Instance == null) { Instance = this; }
     }
     public GameObject GetPlayer()
     {
@@ -32,7 +30,6 @@ public class GameManager : MonoBehaviour
     private async Task LoadScene()
     {
         await SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
-        print(player);
         player.SetActive(true);
         Scene scene = SceneManager.GetSceneByBuildIndex(1);
         GameObject PlayerCamera = GameObject.Find("Main Camera");
